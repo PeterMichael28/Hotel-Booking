@@ -44,12 +44,3 @@ app.use('/api/users', userRoutes);
 app.listen(7000, () => {
  console.log('Server running on port 7000');
 });
-
-// 9pyYhDRBWUK2Bisr
-
-// eMgFesgejW2ZxzkS
-
-
-// lzd44zeaucUep8qV
-
-// mongodb+srv://enitanpeters28:lzd44zeaucUep8qV@cluster0.wkikm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0

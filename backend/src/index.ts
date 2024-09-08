@@ -57,6 +57,13 @@ app.use('/api/users', userRoutes);
 // my hotel routes
 app.use("/api/my-hotels", myHotelRoutes);
 
+
+
+// redirect every other request to the frontend
+app.get( "*", ( req: Request, res: Response ) => {
+  res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"))
+})
+
 app.listen(7000, () => {
  console.log('Server running on port 7000');
 });

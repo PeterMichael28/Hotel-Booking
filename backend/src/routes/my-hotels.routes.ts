@@ -75,5 +75,16 @@ router.post(
   }
 );
 
+
+// a get request to get all hotels added by a user
+router.get("/", verifyToken, async (req: Request, res: Response) => {
+  try {
+    const hotels = await Hotel.find({ userId: req.userId });
+    res.json(hotels);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching hotels" });
+  }
+});
+
 // Export the router for use in the main application
 export default router;

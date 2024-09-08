@@ -8,8 +8,11 @@ import Layout from './layouts/Layout';
 import './App.css';
 import Register from './pages/Register';
 import SignIn from './pages/SignIn';
+import { useAppContext } from './hooks/useAppContext';
+import AddHotel from './pages/AddHotels';
 
 function App() {
+ const { isLoggedIn } = useAppContext();
  return (
   <Router>
    <Routes>
@@ -45,6 +48,19 @@ function App() {
       </Layout>
      }
     />
+
+    {isLoggedIn && (
+     <>
+      <Route
+       path="/add-hotel"
+       element={
+        <Layout>
+         <AddHotel />
+        </Layout>
+       }
+      />
+     </>
+    )}
 
     <Route
      path="*"

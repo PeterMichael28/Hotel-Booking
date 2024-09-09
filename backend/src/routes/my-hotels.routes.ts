@@ -5,7 +5,7 @@ import cloudinary from "cloudinary";
 import { body } from "express-validator";
 import verifyToken from "../middlewares/auth.middleware";
 import Hotel from "../models/hotels.models";
-import { HotelType } from '../../../shared/types';
+import { HotelType } from '../../shared/types';
 
 // Create an Express router instance
 const router = express.Router();

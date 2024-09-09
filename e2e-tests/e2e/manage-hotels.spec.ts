@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import path from "path";
 
-const UI_URL = "http://localhost:5174/";
+const UI_URL = "http://localhost:5173/";
 
 test.beforeEach(async ({ page }) => {
   await page.goto(UI_URL);
@@ -11,7 +11,7 @@ test.beforeEach(async ({ page }) => {
 
   await expect(page.getByRole("heading", { name: "Sign In" })).toBeVisible();
 
-  await page.locator("[name=email]").fill("enitanpeters28@gmail.com");
+  await page.locator("[name=email]").fill("enitanpeters29@gmail.com");
   await page.locator("[name=password]").fill("12345678");
 
   await page.getByRole("button", { name: "Login" }).click();
@@ -61,5 +61,5 @@ test("should display hotels", async ({ page }) => {
     await expect(page.getByText("4 Star Rating")).toBeVisible();
   
     await expect(page.getByRole("link", { name: "View Details" })).toBeVisible();
-    await expect(page.getByRole("link", { name: "Add Hotel" })).toBeVisible();
+    await expect(page.getByRole("link", { name: "Add Hotel" }).nth(1)).toBeVisible();
   });

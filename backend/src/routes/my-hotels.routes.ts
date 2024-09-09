@@ -4,7 +4,8 @@ import multer from "multer";
 import cloudinary from "cloudinary";
 import { body } from "express-validator";
 import verifyToken from "../middlewares/auth.middleware";
-import Hotel, { HotelType } from "../models/hotels.models";
+import Hotel from "../models/hotels.models";
+import { HotelType } from '../../../shared/types';
 
 // Create an Express router instance
 const router = express.Router();

@@ -130,7 +130,7 @@ const Register = () => {
      <button
       type="submit"
       disabled={mutation.isLoading}
-      className="bg-blue-600 text-white px-4 py-3 font-semibold hover:bg-blue-500 rounded-md disabled:bg-blue-400"
+      className="bg-blue-600 text-white px-4 py-3 font-semibold rounded-md  hover:bg-blue-500 disabled:bg-blue-400"
      >
       {mutation.isLoading ? <span className='flex items-center gap-2'>Creating <BiLoader className='text-sm animate-spin' /></span> : "Create Account"}
      </button>

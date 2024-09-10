@@ -29,9 +29,10 @@ const MyHotels = () => {
         </Link>
       </span>
       <div className="grid grid-cols-1 gap-8">
-        {hotelData.map((hotel) => (
+        {hotelData.map((hotel, i) => (
           <div
             data-testid="hotel-card"
+            key={i}
             className="flex flex-col justify-between border border-slate-300 rounded-lg p-8 gap-5"
           >
             <h2 className="text-2xl font-bold">{hotel.name}</h2>

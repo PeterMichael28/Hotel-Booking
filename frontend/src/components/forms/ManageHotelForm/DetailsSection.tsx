@@ -81,7 +81,7 @@ const DetailsSection = () => {
             Select as Rating
           </option>
           {[1, 2, 3, 4, 5].map((num) => (
-            <option value={num}>{num}</option>
+            <option value={num} key={num}>{num}</option>
           ))}
         </select>
         {errors.starRating && (

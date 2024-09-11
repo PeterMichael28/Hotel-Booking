@@ -100,7 +100,8 @@ router.get(
  },
 );
 
-// PUT endpoint to update a hotel by its ID
+
+
 router.put(
  '/:hotelId',
  verifyToken, // Middleware to verify the user's token (authentication)

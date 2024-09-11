@@ -3,15 +3,15 @@ import {
  Navigate,
  RouterProvider,
 } from 'react-router-dom';
-
-import Layout from '../layouts/Layout';
+import Layout from '@/layouts/Layout';
 import ErrorElement from './ErrorElement/ErrorElement';
-import Register from '../pages/Register';
-import SignIn from '../pages/SignIn';
+import Register from '@/pages/Register';
+import SignIn from '@/pages/SignIn';
 import ProtectedRoutes from './ProtectedRoutes';
-import AddHotel from '../pages/AddHotels';
-import EditHotel from '../pages/EditHotel';
-import MyHotels from '../pages/MyHotels';
+import AddHotel from '@/pages/AddHotels';
+import EditHotel from '@/pages/EditHotel';
+import MyHotels from '@/pages/MyHotels';
+import Search from '@/pages/Search';
 
 export default function AppRouter() {
  // Use different layout to display error depending on authentication status
@@ -29,7 +29,7 @@ export default function AppRouter() {
    element: <Layout withOutlet={true} />,
    children: [
     { path: '/', element: <p>Home Page</p> },
-    { path: '/search', element: <p>Search Page</p> },
+    { path: '/search', element: <Search /> },
     { path: '/register', element: <Register /> },
     { path: '/sign-in', element: <SignIn /> },
     {

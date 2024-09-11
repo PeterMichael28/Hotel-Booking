@@ -5,11 +5,11 @@ import mongoose from 'mongoose';
 import userRoutes from './routes/users.routes';
 import authRoutes from './routes/auth.routes';
 import myHotelRoutes from "./routes/my-hotels.routes";
+import hotelRoutes from "./routes/hotels.routes";
 import { connectDatabase } from './db/db';
 import cookieParser from "cookie-parser";
 import path from "path";
 import { v2 as cloudinary } from "cloudinary";
-
 
 
 
@@ -54,9 +54,13 @@ app.use('/api/auth', authRoutes);
 // register user route
 app.use('/api/users', userRoutes);
 
-// my hotel routes
+// logged in user hotel routes
 app.use("/api/my-hotels", myHotelRoutes);
 
+
+
+// hotels routes
+app.use("/api/hotels", hotelRoutes);
 
 
 // redirect every other request to the frontend

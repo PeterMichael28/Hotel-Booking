@@ -2,6 +2,7 @@ import './App.css';
 import AppRouter from './routes/AppRouter';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { AppContextProvider } from './contexts/AppContext.tsx';
+import { SearchContextProvider } from './contexts/SearchContext.tsx';
 
 const queryClient = new QueryClient({
  defaultOptions: {
@@ -15,7 +16,9 @@ function App() {
  return (
   <QueryClientProvider client={queryClient}>
    <AppContextProvider>
-    <AppRouter />;
+    <SearchContextProvider>
+     <AppRouter />;
+    </SearchContextProvider>
    </AppContextProvider>
   </QueryClientProvider>
  );

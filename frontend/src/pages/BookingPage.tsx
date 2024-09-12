@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query';
 import * as apiClient from '../api-client';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Elements } from '@stripe/react-stripe-js';
 import { useAppContext } from '@/hooks/useAppContext';
@@ -44,14 +44,14 @@ const BookingPage = () => {
    enabled: !!hotelId,
   },
  );
-// console.log("paymentIntentData", paymentIntentData)
+ // console.log("paymentIntentData", paymentIntentData)
  const { data: currentUser } = useQuery(
   'fetchCurrentUser',
   apiClient.fetchCurrentUser,
  );
 
  if (!hotel) {
-//   navigate('/');
+  //   navigate('/');
   return <></>;
  }
 

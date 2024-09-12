@@ -6,7 +6,7 @@ export const connectDatabase = () => {
   .connect(process.env.MONGODB_CONNECTION_STRING as string)
   .then((data: { connection: { host: any } }) => {
    console.log(
-    `mongod connected with server: ${data.connection.host}, ${process.env.MONGODB_CONNECTION_STRING}`,
+    `mongod connected with server`,
    );
   });
 };

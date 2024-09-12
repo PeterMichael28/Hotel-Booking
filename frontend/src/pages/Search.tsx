@@ -152,7 +152,7 @@ const Search = () => {
       </option>
      </select>
     </div>
-    <div className="flex-1 w-full">
+    <div className="f w-full">
      {!isLoading ? (
       hotelData && hotelData.data && hotelData?.data.length > 0 ? (
        hotelData?.data.map((hotel) => (

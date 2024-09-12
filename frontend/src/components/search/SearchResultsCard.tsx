@@ -7,7 +7,7 @@ type Props = {
 
 const SearchResultsCard = ({ hotel }: Props) => {
  return (
-  <div className="grid grid-cols-1 xl:grid-cols-[2fr_3fr] border border-slate-300 rounded-lg p-8 gap-8">
+  <div className="grid grid-cols-1 xl:grid-cols-[2fr_3fr] border border-slate-300 rounded-lg p-4 gap-6">
    <div className="w-full h-[300px]">
     <img
      alt={hotel.name}
@@ -36,12 +36,12 @@ const SearchResultsCard = ({ hotel }: Props) => {
      </div>
 
      <div className="flex flex-col items-end gap-1">
-      <span className="font-bold">
+      <span className="font-semibold text-xs">
        £{hotel.pricePerNight} per night
       </span>
       <Link
        to={`/detail/${hotel._id}`}
-       className="bg-blue-600 text-white h-full px-4 py-2 rounded-md transition-all duration-300 font-semibold  max-w-fit hover:bg-blue-500"
+       className="bg-blue-600 text-white h-full px-3 py-1 text-sm rounded-md transition-all duration-300 font-semibold  max-w-fit hover:bg-blue-500"
       >
        View More
       </Link>
@@ -54,8 +54,8 @@ const SearchResultsCard = ({ hotel }: Props) => {
 
     <div className="grid grid-cols-1 items-end whitespace-nowrap">
      <div className="flex gap-1 items-center">
-      {hotel.facilities.slice(0, 3).map((facility) => (
-       <span className="bg-slate-300 p-2 rounded-lg font-bold text-xs whitespace-nowrap">
+      {hotel.facilities.slice(0, 3).map((facility, i) => (
+       <span className="bg-slate-300 p-2 rounded-lg font-bold text-xs whitespace-nowrap" key={i}>
         {facility}
        </span>
       ))}

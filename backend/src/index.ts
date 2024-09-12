@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 import userRoutes from './routes/users.routes';
 import authRoutes from './routes/auth.routes';
 import myHotelRoutes from "./routes/my-hotels.routes";
+import bookingRoutes from "./routes/my-bookings.routes";
 import hotelRoutes from "./routes/hotels.routes";
 import { connectDatabase } from './db/db';
 import cookieParser from "cookie-parser";
@@ -61,6 +62,9 @@ app.use("/api/my-hotels", myHotelRoutes);
 
 // hotels routes
 app.use("/api/hotels", hotelRoutes);
+
+// users bookings
+app.use("/api/my-bookings", bookingRoutes);
 
 
 // redirect every other request to the frontend

@@ -67,7 +67,7 @@ const shouldBlock = useCallback(
   useEffect(() => {
     const handleBeforeUnload = (event: BeforeUnloadEvent) => {
       // If shouldBlock returns true, prevent the default action and show a confirmation dialog
-      if (shouldBlock()) {
+      if (shouldBlock() && hotel) {
         event.preventDefault();
         event.returnValue =
           'You have unsaved changes. Are you sure you want to Reload?';
@@ -81,7 +81,7 @@ const shouldBlock = useCallback(
     return () => {
       window.removeEventListener('beforeunload', handleBeforeUnload);
     };
-  }, [shouldBlock]);
+  }, [hotel, shouldBlock]);
 
  const onSubmit = handleSubmit((formDataJson: HotelFormData) => {
   const formData = new FormData();

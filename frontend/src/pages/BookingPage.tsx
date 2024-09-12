@@ -11,7 +11,6 @@ import BookingDetailsSummary from '@/components/BookingDetailsSummary';
 const BookingPage = () => {
  const { stripePromise } = useAppContext();
  const search = useSearchContext();
- const navigate = useNavigate();
  const { hotelId } = useParams();
 
  const [numberOfNights, setNumberOfNights] = useState<number>(0);
